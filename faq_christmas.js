@@ -15,11 +15,29 @@ document.addEventListener("DOMContentLoaded", function () {
                     padding: 15px;
                     background-color: #f7f7f7;
                     font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    transition: background-color 0.3s ease;
+                }
+                .accordion-header:hover {
+                    background-color: #eaeaea;
+                }
+                .accordion-header::before {
+                    content: '\25B6';
+                    font-size: 1.2em;
+                    margin-right: 10px;
+                    transition: transform 0.3s ease;
+                }
+                .accordion-header.active::before {
+                    transform: rotate(90deg);
                 }
                 .accordion-content {
                     display: none;
                     padding: 15px;
                     background-color: #fff;
+                    border-left: 3px solid #007BFF;
+                    transition: max-height 0.3s ease;
                 }
                 .accordion-header.active + .accordion-content {
                     display: block;
